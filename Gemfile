@@ -8,6 +8,7 @@ end
 # Rails new
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'coffee-rails', '~> 4.2'
+gem 'petergate', '~> 1.6', '>= 1.6.3'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
