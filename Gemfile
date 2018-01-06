@@ -7,7 +7,9 @@ end
 
 # Rails new
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'coffee-rails', '~> 4.2'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'petergate', '~> 1.6', '>= 1.6.3'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
