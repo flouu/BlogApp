@@ -1,34 +1,45 @@
 <p id="notice"><%= notice %></p>
 <p id="alert"><%= alert %></p>
 
-<h1>Hi, <%= current_user.first_name %>!</h1>
-
-<h1>Blogs</h1>
-<div class="">
-  <% @blogs.each do |blog| %>
-    <div class="row">
-      <div class="col-md-4">
-      </div>
-
-      <div class="col-md-4">
-        <h2><%= link_to blog.title, blog %></h2>
-        <%= image_tag blog.thumb_image %>
-
-        <div class="">
-          <%= blog.body %>
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-sm-8 blog-main">
+      <% @blogs.each do |blog| %>
+        <div class="blog-post">
+          <div class="">
+            <%= link_to blog.title, blog, class: 'blog-post-title' %>
+          </div>
+          <div class="">
+            <%= image_tag "http://via.placeholder.com/300x200" %>
+          </div>
+          <div class="">
+            <%= blog.body %>
+          </div>
         </div>
 
-        <%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %>
-        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
-      </div>
-
-      <div class="col-md-4">
-      </div>
+        <nav class="blog-pagination">
+          <a class="btn btn-outline-primary" href="#">Older</a>
+          <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+          <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-outline-primary' if logged_in?(:site_admin) %>
+          <%= link_to 'Destroy', blog, class: 'btn btn-outline-primary', method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
+        </nav>
+      <% end %>
     </div>
-  <br>
-  <% end %>
-</div>
 
-<br>
+    <aside class="col-sm-3 ml-sm-auto blog-sidebar">
+      <div class="sidebar-module sidebar-module-inset">
+        <h4>About this blog</h4>
+        <p>These are a study of how rails works, nothing special here... YET!</p>
+      </div>
 
-<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
+      <div class="sidebar-module">
+        <h4>Elsewhere</h4>
+        <ol class="list-unstyled">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+</main>
