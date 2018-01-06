@@ -6,10 +6,12 @@
           <div class="">
             <%= link_to blog.title, blog, class: 'blog-post-title' %>
           </div>
-          <div class="">
-            <%= image_tag "http://via.placeholder.com/300x200" %>
+
+          <div class="blog-padding">
+            <%= image_tag blog.thumb_image %>
           </div>
-          <div class="">
+
+          <div class="blog-padding">
             <%= blog.body %>
           </div>
         </div>

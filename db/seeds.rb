@@ -12,7 +12,7 @@ User.create!(
   email: 'user@example.com',
   password: 'asdasd',
   password_confirmation: 'asdasd',
-  name: 'Regular User',
+  name: 'Registered User',
 )
 
 puts "1 Regular user created"
