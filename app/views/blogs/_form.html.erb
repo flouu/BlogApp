@@ -10,18 +10,22 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :blog_title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :blog_body %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="role="main" class="container"">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4 blog-main">
+        <div class="form-group">
+          <%= form.label :title %>
+          <%= form.text_field :title, id: :blog_title, class: 'form-control' %>
+          <%= form.label :body %>
+          <%= form.text_area :body, id: :blog_body, class: 'form-control' %>
+          <%= form.submit "Submit", class: 'btn btn-outline-primary' %>
+          <%= link_to 'Back', blogs_path, class: 'btn btn-outline-secondary' %>
+        </div>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
   </div>
 <% end %>
