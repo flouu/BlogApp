@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlogAppLayout</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <!-- start of blog-masthead -->
+    <header>
+      <div class="blog-masthead">
+        <div class="container">
+          <nav class="nav">
+            <%= link_to 'Blog', root_path, class: 'nav-link active' %>
+            <%= login_helper %>
+            <%= link_to 'New Blog', new_blog_path, class: 'nav-link' if logged_in?(:site_admin) %>
+          </nav>
+        </div>
+      </div>
+
+      <div class="blog-header">
+        <div class="container">
+          <h1 class="blog-title">BlogApp</h1>
+          <p class="lead blog-description">A Simple BlogApp For Learning Ruby on Rails.</p>
+        </div>
+      </div>
+    </header>
+    <!-- start of blog-masthead -->
+
+    <%= yield %>
+
+    <!-- blog-footer -->
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+    <!-- blog-footer -->
+  </body>
+</html>
