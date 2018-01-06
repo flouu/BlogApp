@@ -4,29 +4,30 @@
 <h1>Hi, <%= current_user.first_name %>!</h1>
 
 <h1>Blogs</h1>
+<div class="">
+  <% @blogs.each do |blog| %>
+    <div class="row">
+      <div class="col-md-4">
+      </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <div class="col-md-4">
+        <h2><%= link_to blog.title, blog %></h2>
+        <%= image_tag blog.thumb_image %>
 
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= image_tag blog.thumb_image %></td>
-        <td><%= blog.title %></td>
-        <td><%= blog.body %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <div class="">
+          <%= blog.body %>
+        </div>
+
+        <%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %>
+        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
+      </div>
+
+      <div class="col-md-4">
+      </div>
+    </div>
+  <br>
+  <% end %>
+</div>
 
 <br>
 
