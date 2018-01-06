@@ -1,0 +1,20 @@
+<header>
+  <div class="blog-masthead">
+    <div class="container">
+      <nav class="nav">
+        <%= link_to 'Blog', root_path, class: 'nav-link active' %>
+        <%= login_helper %>
+        <%= link_to 'New Blog', new_blog_path, class: 'nav-link' if logged_in?(:site_admin) %>
+      </nav>
+    </div>
+  </div>
+
+  <div class="blog-header">
+    <div class="container">
+      <h1 class="blog-title">BlogApp</h1>
+      <p class="lead blog-description"><%= current_user.first_name %>, welcome to my blogApp!</p>
+      <p id="notice"><%= notice %></p>
+      <p id="alert"><%= alert %></p>
+    </div>
+  </div>
+</header>
