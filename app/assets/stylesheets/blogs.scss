@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 /*
  * Globals
@@ -163,4 +164,7 @@ h6,
  */
 .blog-padding {
   padding-top: 15px;
+}
+.social-links {
+  font-size: 2em;
 }
